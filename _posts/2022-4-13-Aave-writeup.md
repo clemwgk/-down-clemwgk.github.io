@@ -3,7 +3,7 @@ layout: post
 title: Aave write-up 
 ---
 
-I recently applied for [Messari Hub](https://messari.io/hub) but haven't heard back yet. The research task for the application is to answer a few questions about [Aave](https://aave.com/). I've decided to pen down my responses here too, for the record, irrespective of outcome.
+I recently applied for [Messari Hub](https://messari.io/hub) but haven't heard back yet. The research task for the application was to answer a few questions about [Aave](https://aave.com/). I've decided to pen down my responses here too, for the record, irrespective of outcome.
 
 ### What problem is the protocol solving? (3-4 sentences) ###
 
