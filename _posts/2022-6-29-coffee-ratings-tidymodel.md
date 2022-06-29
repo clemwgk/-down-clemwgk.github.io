@@ -3,17 +3,19 @@ layout: post
 title: Tidymodel basics - coffee ratings
 ---
 
-In my economics education, most of the statistics and econometrics I had learnt focused on adopting an explanatory lens. We want to establish whether something has a significant effect on the outcome of interest, and we apply econometric techniques of varying complexity (e.g. instrument variables regression, diff-in-diff) to get around various biases (e.g. omitted variable bias, reverse causality) that would result in some form of biased estimate. 
+In my economics education, most of the statistics and econometrics I had learnt focused on adopting an explanatory lens. We want to establish whether something has a significant effect on the outcome of interest, and we apply econometric techniques of varying complexity (typically some form of regression analysis e.g. instrument variables regression, diff-in-diff) to get around various biases (e.g. omitted variable bias, reverse causality) that would result in some form of biased estimate. 
 
-That form of data analysis is inherently quite backward looking - not totally, because the end-goal of that research is still to apply the lessons to policies going forward. But I observe that the "data analysis" that is desirable in today's world is a more forward-looking type of data analysis, where we take lessons from existing data to model or predict future data. Hence, the lens is more of a predictive lens rather than explanatory lens.
+That form of data analysis is inherently quite backward looking - not totally, because the end-goal of that research is still to apply the lessons to the future (e.g. future policy). But I observe that the "data analysis" that is desirable in today's world is a more forward-looking type of data analysis, where we take lessons from existing data to explicitly model or predict future data. Hence, the lens is more of a predictive lens rather than explanatory lens.
 
-The two are not quite the same. Understanding the causal factors and the causal effect will naturally contribute to good prediction. But what if you have a precisely estimated impact for a factor that, in the bigger scheme of things, is a small driver of the overall outcome of interest? Conversely, what if I could predict the outcome using certain observables, without knowing the causal mechanism that links the two?
+The two are not quite the same. Understanding the causal factors and the causal effect will naturally contribute to good prediction. But what if you have a precisely estimated effect for a factor that, in the bigger scheme of things, is just a small driver of the overall outcome of interest? Conversely, what if I could predict the outcome reliably using an observable, without knowing the causal mechanism that links the two?
 
-These days, the buzzword in such predictive data analysis is probably machine learning. It sounds daunting, in reality there is a natural bridge over to that world; as it turns out, regression (one of the key econometric techniques) is a machine learning technique too.
+These days, the buzzword in such predictive data analysis is probably machine learning. It sounds daunting, though in reality there is a natural bridge from what I have learnt in the past to the machine learning world; as it turns out, regression is both an econometric technique and a machine learning technique too.
 
 That brings me to tidymodels. I had started learning R using the tidyverse packages and more recently I started learning about the tidymodels package. I guess I think of it as a companion package to tidyverse that focuses on modelling and machine learning - seems to fit in seamlessly with the tidyverse as a whole.
 
 The basics are not that hard to get into, and I will illustrate using the [coffee ratings data from TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-07-07/readme.md).
+
+## Basic use of tidymodels
 
 After loading and inspecting the data (see instructions in the link above for how to get the data), the first thing I do is a bit of pre-cleaning the data. I want to focus on Arabica beans so I remove the minority of Robusta entries. I also want to remove data for which the combination of country of origin and coffee bean variety has too few data points, as the model will not be trained well if there are too few data points within that category. This process cost me 15.8% of the total observations. 
 
@@ -113,7 +115,7 @@ I find it most helpful to see it visually. So let's just plot the predicted valu
 
 ![Overall plot](/2022-06-coffee-tidymodel/coffee_overall_plot.png)
 
-I think faceting by country shows quite clearly that the model has some way to go because there is a lot of horizontal spread present (e.g. Mexico, Nicaragua), which suggests the model is missing out on some predictive power. Otherwise, we would expect to see broadly diagonal spread of the data (i.e. predicted value and true value broadly in line). In my defense, I think the data set is a bit light on predictors.
+I think faceting by country shows quite clearly that the model has some way to go because there is a lot of horizontal spread present (e.g. Guatemala, Mexico), which suggests the model is missing out on some predictive power. Otherwise, we would expect to see broadly diagonal spread of the data (i.e. predicted value and true value broadly in line). In my defense, I think the data set is a bit light on predictors.
 
 ![Facet by country](/2022-06-coffee-tidymodel/coffee_facetbycountry_plot.png)
 
