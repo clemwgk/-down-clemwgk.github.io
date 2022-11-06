@@ -11,7 +11,7 @@ It seems interesting enough to validate empirically. So, here's a simple dashboa
 
 I've started learning Python but not proficient enough yet to put a dashboard together so this was done in R Shiny.
 
-<iframe height="1000" width="100%" frameborder="no" src="http://clementweegk.shinyapps.io/net_liquidity"> </iframe>
+<iframe height="1000" width="100%" frameborder="no" src="https://clementweegk.shinyapps.io/net_liquidity"> </iframe>
 
 
 
